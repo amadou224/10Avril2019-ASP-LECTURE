@@ -1,0 +1,15 @@
+﻿@{
+    Layout = "~/Views/Shared/DispositionGenerale.cshtml";
+}
+@section Jumbotron
+{
+    <h1>Création d'un formulaire</h1>
+}
+
+<form method="post" action="@Url.Action("CreerLeLivre")">
+    Titre :
+    <input type="text" name="titre" /><br />
+    Auteur :
+    <input type="text" name="auteur" /><br />
+    <input type="submit" value="Créer le livre" />
+</form>

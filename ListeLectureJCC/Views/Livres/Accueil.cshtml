@@ -1,0 +1,111 @@
+﻿
+@{
+    Layout = "~/Views/Shared/DispositionGenerale.cshtml";
+}
+
+@section Jumbotron
+{
+    <h1>Bienvenue sur ma liste de lecture</h1>
+}
+
+<fieldset style="text-align:right">
+    <legend>Mes livres en cours</legend>
+    <table style="text-align:left" class="table table-hover table-sm">
+        <thead>
+            <tr>
+                <th></th>
+                <th>Titre</th>
+                <th>Auteur</th>
+                <th>Date de début</th>
+                <th>Note</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <a href="@Url.Action("Detail", new { idLivre = 387})">
+                        <i class="fa fa-book "></i>
+                    </a>
+
+                </td>
+                <td>Mon premier titre</td>
+                <td>Mon premier auteur</td>
+                <td>18/02/2017</td>
+                <td>
+                    <a href="@Url.Action("ConfirmationNotation")"><i class="fa fa-star"></i></a>
+                    <a href="@Url.Action("ConfirmationNotation")"><i class="fa fa-star"></i></a>
+                    <a href="@Url.Action("ConfirmationNotation")"><i class="fa fa-star"></i></a>
+                    <a href="@Url.Action("ConfirmationNotation")"><i class="fa fa-star"></i></a>
+                    <a href="@Url.Action("ConfirmationNotation")"><i class="fa fa-star-o"></i>  </a>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <a href="@Url.Action("Detail")"><i class="fa fa-book "></i></a>
+                </td>
+                <td>Mon second titre</td>
+                <td>Toto</td>
+                <td>21/01/2018</td>
+                <td>
+                    <a href="@Url.Action("ConfirmationNotation")"><i class="fa fa-star-o"></i></a>
+                    <a href="@Url.Action("ConfirmationNotation")"><i class="fa fa-star-o"></i></a>
+                    <a href="@Url.Action("ConfirmationNotation")"><i class="fa fa-star-o"></i></a>
+                    <a href="@Url.Action("ConfirmationNotation")"><i class="fa fa-star-o"></i></a>
+                    <a href="@Url.Action("ConfirmationNotation")"><i class="fa fa-star-o"></i></a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="@Url.Action("FormulaireCreation")" type="button" class="btn btn-success">Créer un nouveau livre</a>
+
+</fieldset>
+
+<fieldset>
+    <legend>Mes livres lus</legend>
+    <table class="table table-hover table-sm">
+        <thead>
+            <tr>
+                <th></th>
+                <th>Titre</th>
+                <th>Auteur</th>
+                <th>Date de début</th>
+                <th>Note</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <a href="@Url.Action("Detail")"><i class="fa fa-book "></i></a>
+                </td>
+                <td>Mon premier titre</td>
+                <td>Mon premier auteur</td>
+                <td>18/02/2017</td>
+                <td>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-o"></i>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <a href="@Url.Action("Detail")"><i class="fa fa-book "></i></a>
+                </td>
+                <td>Mon second titre</td>
+                <td>Toto</td>
+                <td>21/01/2018</td>
+                <td>
+                    <i class="fa fa-star-o"></i>
+                    <i class="fa fa-star-o"></i>
+                    <i class="fa fa-star-o"></i>
+                    <i class="fa fa-star-o"></i>
+                    <i class="fa fa-star-o"></i>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</fieldset>

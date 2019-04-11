@@ -1,0 +1,82 @@
+﻿@model ListeLectureJCC.Models.DetailModel
+
+@{
+    Layout = "~/Views/Shared/DispositionGenerale.cshtml";
+}
+
+@section Jumbotron
+{
+    <h1>@Model.Titre</h1>
+    <h3>@Model.Auteur</h3>
+}
+
+@if (Model != null)
+{
+    <div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-3">
+                    Date de début de lecture
+                </div>
+                <div class="col-5">
+                    @Model.DateDeDebutDeLecture.ToString("dd/MM/yyyy")
+                </div>
+            </div>
+            @if (Model.DateDeFinDeLecture.HasValue)
+            {
+                <div class="row">
+                    <div class="col-3">
+                        Date de fin de lecture
+                    </div>
+                    <div class="col-5">
+                        @Model.DateDeFinDeLecture.Value.ToShortDateString()
+                    </div>
+                </div>
+            }
+            else
+            {
+                <div class="row">
+                    <div class="col-3">
+                    </div>
+                    <div class="col-5">
+                        Livre en cours de lecture
+                    </div>
+                </div>
+            }
+
+
+            <div class="row">
+                <div class="col-3">
+                    Note
+                </div>
+                <div class="col-5">
+
+                    @for (int i = 1; i <= 5; i++)
+                    {
+                        if (Model.Note >= i)
+                        {
+                            <a href="@Url.Action("ConfirmationNotation")"><i class="fa fa-star"></i></a>
+                        }
+                        else
+                        {
+                            <a href="@Url.Action("ConfirmationNotation")"><i class="fa fa-star-o"></i></a>
+                        }
+                    }
+
+                </div>
+            </div>
+        </div>
+        <a href="@Url.Action("Accueil")" class="btn btn-primary btn-lg">Revenir à l'accueil</a>
+        @if (!Model.DateDeFinDeLecture.HasValue)
+        {
+            <a href="@Url.Action("TerminerLivre", new { idLivre = Model.ID })" class="btn btn-success btn-lg">Finaliser la lecture</a>
+        }
+        <a href="@Url.Action("AfficherFormulaireModificationLivre", new { idLivre = Model.ID })" class="btn btn-success btn-lg">Modifier le livre</a>
+
+    </div>
+}
+else
+{
+    <h1>Aucun livre trouvé</h1>
+}
