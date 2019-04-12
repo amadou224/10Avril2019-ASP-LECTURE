@@ -16,6 +16,12 @@ namespace ListeLectureJCC.Controllers
             return View(model);
         }
 
+       // public ActionResult EtatLivreJson(int idLivre)
+        //{
+         //   return
+       // }
+
+
         public ActionResult TerminerLivre(int idLivre)
         {
             DataAccess.MettreAJourDateDeFinDeLecture(idLivre);
@@ -56,7 +62,7 @@ namespace ListeLectureJCC.Controllers
 
         public ActionResult MettreAJourLivre(int idLivre, string titre, string auteur)
         {
-            DataAccess.MettreAJouerTitreEtAuteur(idLivre, titre, auteur);
+            DataAccess.MettreAJouerTitreEtAuteur(idLivre, titre, auteur);         // PAGE VOTE RECUP  
             return RedirectToAction("Detail", new { idLivre = idLivre });
         }
     }

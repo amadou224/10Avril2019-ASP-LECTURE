@@ -98,7 +98,7 @@ namespace ListeLectureJCC.Models
                 SqlCommand command = new SqlCommand(@"UPDATE Livre SET titre=@titre, Auteur=@auteur WHERE ID = @idLivre", connection);
                 command.Parameters.AddWithValue("@titre", titre);
                 command.Parameters.AddWithValue("@auteur", auteur);
-                command.Parameters.AddWithValue("@idLivre", idLivre);
+                command.Parameters.AddWithValue("@idLivre", idLivre);   
                 command.ExecuteNonQuery();
             }
         }
